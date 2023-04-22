@@ -1,6 +1,6 @@
 pkgname=skk-emoji-jisyo-colon
 pkgver=0.0.7
-pkgrel=1
+pkgrel=2
 pkgdesc='An emoji dictionary for the SKK Japanese input method'
 arch=('any')
 url='https://github.com/uasi/skk-emoji-jisyo'
@@ -13,7 +13,7 @@ replaces=('skk-emoji-jisyo' 'skk-emoji-jisyo-ja')
 
 package() {
   cd "$srcdir/${pkgname%-colon}-${pkgver}" || exit 1
-  sed -i 's/^\w\+/:&:/' SKK-JISYO.emoji.utf8
+  sed -i 's/^[^; ]\+/:&:/' SKK-JISYO.emoji.utf8
   sed -i '9i ;; Copyright (c) 2022 @kurubushi' SKK-JISYO.emoji.utf8
   install -dm755 "$pkgdir/usr/share/skk"
   install -m644 "SKK-JISYO.emoji.utf8" "$pkgdir/usr/share/skk/"
