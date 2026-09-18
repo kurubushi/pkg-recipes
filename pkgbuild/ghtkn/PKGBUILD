@@ -1,0 +1,17 @@
+pkgname=ghtkn
+pkgver=0.4.0
+pkgrel=1
+pkgdesc='A CLI to create short-lived (8 hours) GitHub App User Access Token for secure local development'
+arch=('any')
+url='https://github.com/suzuki-shunsuke/ghtkn'
+license=('custom')
+depends=()
+makedepends=()
+source=('https://github.com/suzuki-shunsuke/ghtkn/releases/download/v0.4.0/ghtkn_linux_amd64.tar.gz')
+sha256sums=('2dbcdcd0d40966fda13522b23c6522b8c6682f0e71930131967e0f5d70f12526')
+
+package() {
+  cd "$srcdir" || exit 1
+  install -dm755 "$pkgdir/usr/bin"
+  install -m755 ghtkn "$pkgdir/usr/bin/"
+}
