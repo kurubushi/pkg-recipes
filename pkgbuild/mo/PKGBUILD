@@ -1,0 +1,17 @@
+pkgname=mo
+pkgver=1.6.8
+pkgrel=1
+pkgdesc='mo is a Markdown viewer that opens .md files in a browser.'
+arch=('x86_64')
+url='https://github.com/k1LoW/mo'
+license=('custom')
+depends=()
+makedepends=()
+source=('https://github.com/k1LoW/mo/releases/download/v1.6.8/mo_v1.6.8_linux_amd64.tar.gz')
+sha256sums=('33972709836832579fde45adb8512bd15f444dc484ff988c0331579d35f115b8')
+
+package() {
+  cd "$srcdir" || exit 1
+  install -dm755 "$pkgdir/usr/bin"
+  install -m755 mo "$pkgdir/usr/bin/"
+}
