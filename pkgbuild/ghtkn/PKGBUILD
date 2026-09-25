@@ -1,8 +1,8 @@
 pkgname=ghtkn
 pkgver=0.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A CLI to create short-lived (8 hours) GitHub App User Access Token for secure local development'
-arch=('any')
+arch=('x86_64')
 url='https://github.com/suzuki-shunsuke/ghtkn'
 license=('custom')
 depends=()
